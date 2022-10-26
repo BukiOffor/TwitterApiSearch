@@ -1,12 +1,29 @@
 import csv
 import json
-from PremiumApi.TweetType import determine_tweet_type
+from TweetType import determine_tweet_type
+from parse import read_oldfiles, get_newfiles, write_readfile
+import sys
+
 
 tweets = []
 mydict = {}
+
+read_oldfiles()
+print('****old files read succesfully****', '\n')
+print('-----loading unread files-----','\n')
+files = get_newfiles()
+if len(files) < 1:
+    print("-----no new Files-----", '\n')
+    print('!!please move json files to current working folder!!', '\n')
+    sys.exit()
+
+
+print(f"{len(files)} files to be cleaned", '\n')
 #load the json file to be cleaned 
-with open('01-10.json') as file:
-    data = json.load(file)
+for i in files:
+    print(f'******cleaning {i}*******', '\n')
+    with open(i) as file:
+        data = json.load(file)
 
 index = -1
 for results in data['results']:
@@ -32,7 +49,7 @@ for results in data['results']:
 
 
     mydict = { "tweet_id": data['results'][index]["id_str"],
-                       "date":data['results'][index]["created_at"],
+                       "datae":data['results'][index]["created_at"],
                        "full_text": full_text,
                        "tweet_type": determine_tweet_type(data['results'][index]),
                         "reply_count": data['results'][index]["reply_count"], #Number of times Tweet has been replied to
@@ -47,10 +64,13 @@ for results in data['results']:
     tweets.append(mydict)
 
 with open('compiled_tweets.txt', 'a') as file:
-    writer = csv.DictWriter(file, fieldnames=['Data',])
+    writer = csv.DictWriter(file, fieldnames=['data',])
     for info in tweets:
-        writer.writerow({'Data': info}) 
+        writer.writerow({'data': info}) 
 
+
+write_readfile()
+print("****new files written*****", '\n')
     
-print("*******Successful********")
+print("*******Task Successful********")
 

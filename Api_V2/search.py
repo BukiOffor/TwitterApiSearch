@@ -2,6 +2,9 @@ import tweepy
 import os
 import json
 
+mydict = {}
+mylist =[]
+
 #load keys into variable
 api_key = os.environ["TWITTER_API_KEY"]
 key_secret = os.environ["TWITTER_KEY_SECRET"]
@@ -14,4 +17,5 @@ client = tweepy.Client(bearer_token=b_token)
 query = "Query -is:retweet"
 tweets = tweepy.Paginator(client.search_recent_tweets,query=query,tweet_fields=['context_annotations','created_at',],place_fields=['full_name','country_code','country','geo'],user_fields=['location',],max_results=10).flatten(limit=2)
 data = json.loads(tweets)
-    
+
+print(data)  
