@@ -1,6 +1,6 @@
 import csv
 import json
-from PremiumApi.TweetType import determine_tweet_type
+from TweetType import determine_tweet_type
 
 tweets = []
 mydict = {}
