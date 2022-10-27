@@ -16,7 +16,7 @@ auth.set_access_token = (access_token, access_token_secret)
 api = tweepy.API(auth, wait_on_rate_limit=True)
 
 
-tweet_results = api.search_30_day(label='SentimentAnalysis', query='Peter Obi', fromDate="202210100000", toDate="202210110000")
+tweet_results = api.search_30_day(label='SentimentAnalysis', query='query', fromDate="202210100000", toDate="202210110000")
 for i in range(-1,100):
     text = json.dumps(tweet_results[i]._json, indent=4, sort_keys=True)
     with open('tweets.json' ,'a') as file:

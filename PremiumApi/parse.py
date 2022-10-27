@@ -2,8 +2,10 @@ import csv
 import os
 import sys
 
-    
+#get current working directory   
 path = os.getcwd()
+
+#list files in the path
 dir = os.listdir(path)
 json_files = []
 new_json = []
@@ -21,7 +23,7 @@ def read_oldfiles():
             for line in row:
                json_files.append(line)
     return json_files
-
+#Check if there are new files in dir and returns a list 
 def get_newfiles():
     i = 0
     for filename in dir:
@@ -30,7 +32,7 @@ def get_newfiles():
                 new_json.append(filename)
                 i += 1
     return new_json
-
+#Appends any new file that has just been read to files.csv 
 def write_readfile():
     with open('files.csv','a') as file:
         for i in new_json:
