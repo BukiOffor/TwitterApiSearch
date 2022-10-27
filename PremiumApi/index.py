@@ -6,6 +6,7 @@ import csv
 import json
 from TweetType import determine_tweet_type
 from parse import read_oldfiles,write_readfile,get_newfiles
+import sys
 
 tweets = []
 mydict = {}
