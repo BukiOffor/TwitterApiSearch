@@ -4,10 +4,7 @@
 '''
 import csv
 import json
-from TweetType import determine_tweet_type
-from parse import read_oldfiles, get_newfiles, write_readfile
-import sys
-
+from PremiumApi.TweetType import determine_tweet_type
 
 tweets = []
 mydict = {}
