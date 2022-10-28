@@ -23,7 +23,7 @@ if len(files) < 1:
     sys.exit()
 
 
-print(f"{len(files)} files to be cleaned", '\n')
+print(f"{len(files)} files to be cleaned" '\n')
 #load the json file to be cleaned 
 for i in files:
     print(f'******cleaning {i}*******', '\n')
@@ -70,7 +70,7 @@ for results in data['results']:
     tweets.append(mydict)
 
 while True:
-    Filename = input('Name your cleaned json_file:',"\n")
+    Filename = input('Name your cleaned json_file:')
     if  not Filename.endswith(('.txt','.json')):
         print(f'{Filename} file format not supported please use a (json or txt) file format')
     else:
