@@ -54,7 +54,7 @@ for results in data['results']:
 
 # Select other informations you want from the json file 
     mydict = { "tweet_id": data['results'][index]["id_str"],
-                       "datae":data['results'][index]["created_at"],
+                       "date":data['results'][index]["created_at"],
                        "full_text": full_text,
                        "tweet_type": determine_tweet_type(data['results'][index]),
                         "reply_count": data['results'][index]["reply_count"], #Number of times Tweet has been replied to
@@ -69,11 +69,15 @@ for results in data['results']:
   # append selected information into a dictionary            
     tweets.append(mydict)
 
+while True:
+    Filename = input('Name your cleaned json_file:',"\n")
+    if  not Filename.endswith(('.txt','.json')):
+        print(f'{Filename} file format not supported please use a (json or txt) file format')
+    else:
+        break
 #Write your retrived data in a txt file in the directory
-with open('compiled_tweets.txt', 'a') as file:
-    writer = csv.DictWriter(file, fieldnames=['data',])
-    for info in tweets:
-        writer.writerow({'data': info}) 
+with open(Filename, 'a') as file:
+    json.dump(tweets, file,indent=4, sort_keys=True)
 
 #write file that was just read in file.csv so that read_oldfiles() remebers that it has been read
 write_readfile()
