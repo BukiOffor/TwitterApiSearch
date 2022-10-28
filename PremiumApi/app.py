@@ -22,7 +22,7 @@ auth.set_access_token = (access_token, access_token_secret)
 #instanciate our tweepy class
 api = tweepy.API(auth, wait_on_rate_limit=True,parser=tweepy.parsers.JSONParser())
 query = sys.argv[1]
-tweet_results = api.search_30_day(label='SentimentAnalysis', query=query, fromDate="202210160000", toDate="202210170000")
+tweet_results = api.search_30_day(label='SentimentAnalysis', query=query,)
 
 #write our json in our local directory
 with open(sys.argv[2] ,'a') as file:
