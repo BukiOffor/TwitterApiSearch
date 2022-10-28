@@ -9,7 +9,7 @@ from access import requirements
 requirements()
 
 if not sys.argv[2].endswith(('.txt','.json')):
-    print(f'{sys.argv[2]} is not a file supported format , please use a (json or txt) file format')
+    print(f'{sys.argv[2]} is not a supported file format, please use a (json or txt) file format')
     sys.exit()
 
 api_key = os.environ["TWITTER_API_KEY"]
