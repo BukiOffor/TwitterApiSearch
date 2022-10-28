@@ -1,3 +1,9 @@
+""" 
+    This Script takes 2 arguements:
+    arg1 = name of the cleaned file,
+    arg2 = name of parameter to search return e.g 'name' or 'date'.
+    it also checks and prevents common errors for easier interaction
+"""
 import csv
 import json
 import sys
@@ -18,8 +24,8 @@ def main():
 
 #make sure input is a recognized file format and keys in the json           
 def checkpoint():
-    if not sys.argv[1].endswith(('.txt','.json','.csv')):
-        print(f'{sys.argv[1]} file format not supported please use a (csv, json or txt) file format')
+    if not sys.argv[1].endswith(('.txt','.json',)):
+        print(f'{sys.argv[1]} file format not supported please use a (json or txt) file format')
         sys.exit()
     elif sys.argv[2] not in keys:
         print(f'***Sorry your argument cannot be found in {sys.argv[1]}')
