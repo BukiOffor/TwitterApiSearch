@@ -17,6 +17,7 @@ print('****old files read succesfully****', '\n')
 print('-----loading unread files-----','\n')
 #checks if any new file is in the directory and returns it as a a list
 files = get_newfiles()
+index = -1
 if len(files) < 1:
     print("-----no new Files-----", '\n')
     print('!!please move json files to current working folder!!', '\n')
