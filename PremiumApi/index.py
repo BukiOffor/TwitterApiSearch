@@ -31,7 +31,6 @@ for i in files:
     with open(i) as file:
         data = json.load(file)
 #Get the Full Text of a tweet from the Json file
-index = -1
         for results in data['results']:
             index += 1
             if determine_tweet_type(data['results'][index]) == 'Retweet':
