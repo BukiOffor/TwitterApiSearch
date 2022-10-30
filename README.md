@@ -30,4 +30,5 @@ Logs extracted json files. To repeat extracted filenames be sure to delete used 
 
 ---
 **NOTE**
+
 Be sure to export your API keys into your preffered terminal or edit the script and manually filling it in. If something goes wrong while running, the script should provide you information about possible failures. Feel free to edit the code to search you better.
