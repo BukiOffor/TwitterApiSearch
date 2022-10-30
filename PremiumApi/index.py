@@ -7,6 +7,7 @@ import json
 from TweetType import determine_tweet_type
 from parse import read_oldfiles,write_readfile,get_newfiles
 import sys
+from db import insert
 
 tweets = []
 mydict = {}
@@ -80,6 +81,10 @@ while True:
 #Write your retrived data in a txt file in the directory
 with open(Filename, 'a') as file:
     json.dump(tweets, file,indent=4, sort_keys=True)
+
+#write tweets in database
+print(f'*****writing {Filename} in database')
+insert(Filename)
 
 #write file that was just read in file.csv so that read_oldfiles() remebers that it has been read
 write_readfile()
