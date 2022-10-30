@@ -7,7 +7,7 @@ This repository contains explanatory codes on how to work with twitter premium a
 ## **Script Structure**
     python3 app.py 'query' query.json 
      
-The script takes 2 arguements, the query you want to search for and the name of the json file you want your search to be saved as.
+This script takes 2 arguments, the query you want to search for and the name of the json file you want your search to be saved as. it returns tweets within the last 30 days and a max results of 100 tweets per request.
   
     python3 index.py
  This script searches all the json file in your directory, extracts information from them and stores in a database. Also returns a txt/json file of the information. 
@@ -29,4 +29,4 @@ Logs extracted json files. To repeat extracted filenames be sure to delete used 
 [Tweepy Documentaion](https://docs.tweepy.org/en/stable/api.html#premium-search-apis)
 
 ---
-If something goes wrong while running, the script should provide you information about possible failures. Feel free to edit the code to search you better.
+Be sure to export your API keys into your preffered terminal or edit the script and manually filling it in. If something goes wrong while running, the script should provide you information about possible failures. Feel free to edit the code to search you better.
