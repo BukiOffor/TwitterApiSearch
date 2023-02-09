@@ -5,12 +5,14 @@ This repository contains explanatory codes on how to work with twitter premium a
 ---
 
 ## **Script Structure**
-    python3 app.py 'query' query.json 
-     
+```bash
+python3 app.py 'query' query.json 
+``` 
 This script takes 2 arguments, the query you want to search for and the name of the json file you want your search to be saved as. it returns tweets within the last 30 days and a max results of 100 tweets per request.
   
     python3 index.py
  This script searches all the json file in your directory, extracts information from them and stores in a database. Also returns a txt/json file of the information. 
+ 
 ```bash
  python3 access.py file.json 'username'
  ```
@@ -32,4 +34,4 @@ Logs extracted json files. To repeat extracted filenames be sure to delete used 
 ---
 **NOTE**
 
-Be sure to export your API keys into your preffered terminal or edit the script and manually filling it in. If something goes wrong while running, the script should provide you information about possible failures. Feel free to edit the code to search you better.
+Be sure to export your API keys into your prefered terminal or edit the script and manually fill it in. If something goes wrong while running, the script should provide you information about possible failures. Feel free to edit the code to better your search.
