@@ -11,8 +11,9 @@ This script takes 2 arguments, the query you want to search for and the name of 
   
     python3 index.py
  This script searches all the json file in your directory, extracts information from them and stores in a database. Also returns a txt/json file of the information. 
-
-    python3 access.py file.json 'username'
+```bash
+ python3 access.py file.json 'username'
+ ```
 This script takes 2 arguements, name of a json file and the information you want to extract from it. *The file must have been cleaned by index.py*
 
     python3 db.py
